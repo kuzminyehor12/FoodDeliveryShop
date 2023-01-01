@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" asp-href-include="lib/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" asp-href-include="fontawesome-free-6.2.0-web/css/all.css" />
+	<title>FoodDeliveryShop</title>
+</head>
+	<body>
+
+	<div class="navbar navbar-dark bg-dark" role="navigation">
+		<a class="navbar-brand" href="#">FOOD DELIVERY SHOP</a>
+
+		<div class="text-right">
+			@await Component.InvokeAsync("CartSummary")
+		</div>
+	</div>
+
+	<div class="row m-1 p-1">
+		<div id="categories" class="col-3">
+			@await Component.InvokeAsync("NavigationMenu")
+		</div>
+
+		<div class="col-9">
+			@RenderBody()
+		</div>
+	</div>
+
+	<script src="~/js/site.js"></script>
+	</body>
+</html>
